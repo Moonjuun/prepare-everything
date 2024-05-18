@@ -30,19 +30,19 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
     setOpen(newOpen);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: "smooth",
-      });
-      setOpen(false);
-    }
-  };
+  // const scrollToSection = (sectionId: string) => {
+  //   const sectionElement = document.getElementById(sectionId);
+  //   const offset = 128;
+  //   if (sectionElement) {
+  //     const targetScroll = sectionElement.offsetTop - offset;
+  //     sectionElement.scrollIntoView({ behavior: "smooth" });
+  //     window.scrollTo({
+  //       top: targetScroll,
+  //       behavior: "smooth",
+  //     });
+  //     setOpen(false);
+  //   }
+  // };
 
   return (
     <div>
@@ -88,51 +88,49 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               }}
             >
               <img
-                src={
-                  "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"
-                }
+                src={"/images/kuri.png"}
                 style={logoStyle}
                 alt="logo of sitemark"
               />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
-                  onClick={() => scrollToSection("features")}
+                  // onClick={() => scrollToSection("features")}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Features
+                    계산기
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("testimonials")}
+                  // onClick={() => scrollToSection("testimonials")}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Testimonials
+                    룰렛
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("highlights")}
+                  // onClick={() => scrollToSection("highlights")}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Highlights
+                    사다리 게임
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("pricing")}
+                  // onClick={() => scrollToSection("pricing")}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Pricing
+                    게시판
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("faq")}
+                  // onClick={() => scrollToSection("faq")}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    FAQ
+                    심리 테스트
                   </Typography>
                 </MenuItem>
               </Box>
@@ -145,7 +143,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               }}
             >
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <Button
+              {/* <Button
                 color="primary"
                 variant="text"
                 size="small"
@@ -164,7 +162,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                 target="_blank"
               >
                 Sign up
-              </Button>
+              </Button> */}
             </Box>
             <Box sx={{ display: { sm: "", md: "none" } }}>
               <Button
@@ -198,23 +196,33 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                       toggleColorMode={toggleColorMode}
                     />
                   </Box>
-                  <MenuItem onClick={() => scrollToSection("features")}>
-                    Features
+                  <MenuItem
+                  // onClick={() => scrollToSection("features")}
+                  >
+                    계산기
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("testimonials")}>
-                    Testimonials
+                  <MenuItem
+                  // onClick={() => scrollToSection("testimonials")}
+                  >
+                    룰렛
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("highlights")}>
-                    Highlights
+                  <MenuItem
+                  // onClick={() => scrollToSection("highlights")}
+                  >
+                    사다리 게임
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("pricing")}>
-                    Pricing
+                  <MenuItem
+                  // onClick={() => scrollToSection("pricing")}
+                  >
+                    게시판
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("faq")}>
-                    FAQ
+                  <MenuItem
+                  // onClick={() => scrollToSection("faq")}
+                  >
+                    심리 테스트
                   </MenuItem>
                   <Divider />
-                  <MenuItem>
+                  {/* <MenuItem>
                     <Button
                       color="primary"
                       variant="contained"
@@ -237,7 +245,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     >
                       Sign in
                     </Button>
-                  </MenuItem>
+                  </MenuItem> */}
                 </Box>
               </Drawer>
             </Box>
