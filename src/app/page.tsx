@@ -8,6 +8,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import getLPTheme from "@/common/getLPTheme";
+import Banner from "@/common/Banner";
 
 export default function Home() {
   const [mode, setMode] = React.useState<PaletteMode>("light");
