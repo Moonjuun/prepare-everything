@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { PaletteMode } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -11,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import ToggleColorMode from "./ToggleColorMode";
+import Link from "next/link";
 
 const logoStyle = {
   width: "140px",
@@ -91,6 +93,9 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                 src={"/images/kuri.png"}
                 style={logoStyle}
                 alt="logo of sitemark"
+                onClick={() => {
+                  window.location.href = "/";
+                }}
               />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
@@ -101,14 +106,19 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     계산기
                   </Typography>
                 </MenuItem>
-                <MenuItem
+                <Button
                   // onClick={() => scrollToSection("testimonials")}
                   sx={{ py: "6px", px: "12px" }}
                 >
-                  <Typography variant="body2" color="text.primary">
-                    룰렛
-                  </Typography>
-                </MenuItem>
+                  <Link
+                    href={"/play/roullete"}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Typography variant="body2" color="text.primary">
+                      룰렛
+                    </Typography>
+                  </Link>
+                </Button>
                 <MenuItem
                   // onClick={() => scrollToSection("highlights")}
                   sx={{ py: "6px", px: "12px" }}
