@@ -124,15 +124,15 @@ export default function Footer2() {
               onClose={() => setOnTooltip(false)}
               title="URL 복사됨"
             >
-              <URLShareButton>URL</URLShareButton>
+              <IconWrapper src="/assets/url.png" alt="IconWrapper" />
             </Tooltip>
           </CopyToClipboard>
           <KakaoButtonWrapper>
             <KakaoShareButton onClick={handleKakaoButton}>
-              <KakaoIcon
+              <IconWrapper
                 src="/assets/kakaoIcon.png"
-                alt="KakaoIcon"
-              ></KakaoIcon>
+                alt="Kakaotalk"
+              ></IconWrapper>
             </KakaoShareButton>
           </KakaoButtonWrapper>
         </Stack>
@@ -166,7 +166,7 @@ const KakaoShareButton = styled.a`
   cursor: pointer;
 `;
 
-const KakaoIcon = styled.img`
+const IconWrapper = styled.img`
   width: 48px;
   height: 48px;
   border-radius: 24px;
