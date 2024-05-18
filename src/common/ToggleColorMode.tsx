@@ -22,9 +22,9 @@ function ToggleColorMode({ mode, toggleColorMode }: ToggleColorModeProps) {
         sx={{ minWidth: "32px", height: "32px", p: "4px" }}
       >
         {mode === "dark" ? (
-          <WbSunnyRoundedIcon fontSize="small" />
+          <WbSunnyRoundedIcon fontSize="medium" />
         ) : (
-          <ModeNightRoundedIcon fontSize="small" />
+          <ModeNightRoundedIcon fontSize="medium" />
         )}
       </Button>
     </Box>
