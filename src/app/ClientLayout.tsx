@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useState } from "react";
 import { PaletteMode, Grid } from "@mui/material";
 import Footer2 from "@/common/Footer2";
 import AppAppBar from "@/common/AppAppBar";
@@ -14,19 +14,23 @@ export default function ClientLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const isClient = typeof window !== "undefined"; // 클라이언트 측에서 실행되는지 확인
+
   // 로컬 스토리지에서 이전에 선택한 모드 불러오기
-  const savedMode = localStorage.getItem("colorMode");
-  const [mode, setMode] = React.useState<PaletteMode>(
+  const savedMode = isClient ? localStorage.getItem("colorMode") : null;
+  const [mode, setMode] = useState<PaletteMode>(
     savedMode === "dark" ? "dark" : "light"
   );
 
   const defaultTheme = createTheme({ palette: { mode } });
 
   const toggleColorMode = () => {
-    // 토글 후 현재 모드를 로컬 스토리지에 저장
-    const newMode = mode === "dark" ? "light" : "dark";
-    setMode(newMode);
-    localStorage.setItem("colorMode", newMode);
+    if (isClient) {
+      // 클라이언트 측에서 실행 중일 때만 로컬 스토리지 사용
+      const newMode = mode === "dark" ? "light" : "dark";
+      setMode(newMode);
+      localStorage.setItem("colorMode", newMode);
+    }
   };
 
   return (
