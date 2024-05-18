@@ -18,58 +18,6 @@ declare global {
   }
 }
 
-// 제목과 버튼을 감싸는 컨테이너
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10vh;
-  border-top: 2px solid #ececec;
-`;
-
-// 버튼을 배치시키는 컨테이너
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 48px);
-  grid-column-gap: 8px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  margin-top: 20px;
-`;
-
-// Style을 적용한 버튼 컴포넌트 추가
-const URLShareButton = styled.button`
-  width: 48px;
-  height: 48px;
-  color: white;
-  border-radius: 24px;
-  border: 0px;
-  font-weight: 500;
-  font-size: 18px;
-  cursor: pointer;
-  background-color: #7362ff;
-  &:hover {
-    background-color: #a99fee;
-  }
-  padding: 0px;
-`;
-
-// 카카오버튼
-const KakaoButtonWrapper = styled.div`
-  display: flex;
-`;
-
-const KakaoShareButton = styled.a`
-  cursor: pointer;
-`;
-
-const KakaoIcon = styled.img`
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-`;
-
 const Footer: React.FC = () => {
   // window 객체에서 현재 url 가져오기
   const [currentUrl, setCurrentUrl] = useState<string>("");
@@ -155,15 +103,75 @@ const Footer: React.FC = () => {
             </KakaoButtonWrapper>
           </GridContainer>
         </FlexContainer>
-        <div className="container mx-auto text-center">
+        <PtagSection>
           <p>
             © 2024 cmoonjun11@gmail.com <br />
             All rights reserved.
           </p>
-        </div>
+        </PtagSection>
       </footer>
     </>
   );
 };
 
 export default Footer;
+
+// 제목과 버튼을 감싸는 컨테이너
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+  border-top: 2px solid #ececec;
+`;
+
+// 버튼을 배치시키는 컨테이너
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 48px);
+  grid-column-gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 20px;
+`;
+
+// Style을 적용한 버튼 컴포넌트 추가
+const URLShareButton = styled.button`
+  width: 48px;
+  height: 48px;
+  color: white;
+  border-radius: 24px;
+  border: 0px;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #7362ff;
+  &:hover {
+    background-color: #a99fee;
+  }
+  padding: 0px;
+`;
+
+// 카카오버튼
+const KakaoButtonWrapper = styled.div`
+  display: flex;
+`;
+
+const KakaoShareButton = styled.a`
+  cursor: pointer;
+`;
+
+const KakaoIcon = styled.img`
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+`;
+
+const PtagSection = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 가로 방향 가운데 정렬 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
+  text-align: center;
+`;
