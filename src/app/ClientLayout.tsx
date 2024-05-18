@@ -9,18 +9,24 @@ import Box from "@mui/material/Box";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import styles from "./page.module.css";
-
 export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [mode, setMode] = React.useState<PaletteMode>("light");
+  // 로컬 스토리지에서 이전에 선택한 모드 불러오기
+  const savedMode = localStorage.getItem("colorMode");
+  const [mode, setMode] = React.useState<PaletteMode>(
+    savedMode === "dark" ? "dark" : "light"
+  );
 
   const defaultTheme = createTheme({ palette: { mode } });
 
   const toggleColorMode = () => {
-    setMode((prev) => (prev === "dark" ? "light" : "dark"));
+    // 토글 후 현재 모드를 로컬 스토리지에 저장
+    const newMode = mode === "dark" ? "light" : "dark";
+    setMode(newMode);
+    localStorage.setItem("colorMode", newMode);
   };
 
   return (
