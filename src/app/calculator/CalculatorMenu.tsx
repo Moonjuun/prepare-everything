@@ -9,6 +9,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 // calculator
 import CommonCal from "./CommonCal";
+import AgeCal from "./AgeCal";
 
 export default function CalculatorMenu() {
   const [calculator, setCalculator] = useState<string>("1");
@@ -25,17 +26,19 @@ export default function CalculatorMenu() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        height: "70vh",
       }}
     >
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">계산기</InputLabel>
         <Select value={calculator} label="Calculator" onChange={handleChange}>
           <MenuItem value={1}>일반 계산기</MenuItem>
-          <MenuItem value={2}>Twenty</MenuItem>
+          <MenuItem value={2}>나이 계산기</MenuItem>
           <MenuItem value={3}>Thirty</MenuItem>
         </Select>
       </FormControl>
       {calculator == "1" && <CommonCal />}
+      {calculator == "2" && <AgeCal />}
     </Box>
   );
 }

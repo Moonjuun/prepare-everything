@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 
 export default function calculator() {
   return (
-    <Box style={{ marginBottom: "40vh" }}>
+    <Box>
       <CalculatorMenu />
     </Box>
   );
