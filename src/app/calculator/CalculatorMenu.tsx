@@ -11,6 +11,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import CommonCal from "./CommonCal";
 import AgeCal from "./AgeCal";
 import DateCal from "./DateCal";
+import Deposit from "./DepositCal";
 
 export default function CalculatorMenu() {
   const [calculator, setCalculator] = useState<string>("1");
@@ -27,7 +28,8 @@ export default function CalculatorMenu() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        height: "70vh",
+        height: "100vh",
+        marginTop: "13vh",
       }}
     >
       <FormControl fullWidth>
@@ -36,11 +38,13 @@ export default function CalculatorMenu() {
           <MenuItem value={1}>일반 계산기</MenuItem>
           <MenuItem value={2}>나이 계산기</MenuItem>
           <MenuItem value={3}>날짜 계산기</MenuItem>
+          <MenuItem value={4}>예금 계산기</MenuItem>
         </Select>
       </FormControl>
       {calculator == "1" && <CommonCal />}
       {calculator == "2" && <AgeCal />}
       {calculator == "3" && <DateCal />}
+      {calculator == "4" && <Deposit />}
     </Box>
   );
 }
