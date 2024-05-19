@@ -19,18 +19,12 @@ const Roulette = dynamic(
 
 const MainRoulette: React.FC = () => {
   return (
-    <Layout>
+    <>
       {nameData.map((v: NameInfo, i: number) => {
         return <Roulette key={i} colors={v.colors} info={v.info} n={i} />;
       })}
-    </Layout>
+    </>
   );
 };
 
 export default MainRoulette;
-
-const Layout = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 100%;
-`;

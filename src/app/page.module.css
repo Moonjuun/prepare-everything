@@ -1,6 +1,6 @@
 .main {
   display: flex;
-  flex-direction: grid;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
@@ -8,6 +8,7 @@
 
 @media screen and (max-width: 768px) {
   .main {
+    display: flex;
     flex-direction: column;
   }
   .leftsection {
