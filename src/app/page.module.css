@@ -10,9 +10,16 @@
   .main {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
   }
   .leftsection {
-    margin-top: 100px;
+    margin-top: 15vh;
+    height: 20%;
+  }
+  .rightsection {
+    height: 30%;
+    margin-top: 65vh;
   }
 }
 

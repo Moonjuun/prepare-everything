@@ -44,7 +44,7 @@ export default function ClientLayout({
           <Grid item maxWidth={"60%"}>
             {children}
           </Grid>
-          <Grid item maxWidth={"20%"}>
+          <Grid item maxWidth={"20%"} className={styles.rightsection}>
             Right Section
           </Grid>
         </Grid>

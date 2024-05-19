@@ -78,7 +78,7 @@ const DateCal: React.FC = () => {
             fullWidth
             sx={{ marginTop: 2, marginBottom: 1 }}
           />
-          기준일을 1일로 포함하여 계산됩니다
+          기준일을 1일로 포함하여 계산
           <Typography
             variant="body1"
             sx={{
