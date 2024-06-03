@@ -14,6 +14,7 @@ import DateCal from "./DateCal";
 import Deposit from "./DepositCal";
 import Interest from "./Interest";
 import HourlyWageCal from "./HourlyWageCal";
+import WordCal from "./WordCal";
 
 export default function CalculatorMenu() {
   const [calculator, setCalculator] = useState<string>("1");
@@ -43,6 +44,7 @@ export default function CalculatorMenu() {
           <MenuItem value={4}>날짜 계산기</MenuItem>
           <MenuItem value={5}>예금 계산기</MenuItem>
           <MenuItem value={6}>적금 계산기</MenuItem>
+          <MenuItem value={7}>글자수 계산기</MenuItem>
         </Select>
       </FormControl>
       {calculator == "1" && <CommonCal />}
@@ -51,6 +53,7 @@ export default function CalculatorMenu() {
       {calculator == "4" && <DateCal />}
       {calculator == "5" && <Deposit />}
       {calculator == "6" && <Interest />}
+      {calculator == "7" && <WordCal />}
     </Box>
   );
 }
