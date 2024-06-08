@@ -125,9 +125,11 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   // onClick={() => scrollToSection("highlights")}
                   sx={{ py: "6px", px: "12px" }}
                 >
-                  <Typography variant="body2" color="text.primary">
-                    사다리 게임
-                  </Typography>
+                  <Link href={"/play/ghost"} style={{ textDecoration: "none" }}>
+                    <Typography variant="body2" color="text.primary">
+                      사다리 게임
+                    </Typography>
+                  </Link>
                 </MenuItem>
                 <MenuItem
                   // onClick={() => scrollToSection("pricing")}
